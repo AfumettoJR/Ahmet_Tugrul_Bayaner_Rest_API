@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>INM 420 Rest API</title>
+
+        <!-- css reset -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css">
+
+        <!-- local css -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <img src="/assets/images/logo-01.png" alt="Weather Capital Logo, sun and snowflake creating a circular shape ">
+            <h1>Weather Capital</h1>
+
+        </header>
+
+        <main>
+
+            <section id="buttonFlex">
+
+                <button id="buttonAnkara">Ankara</button>
+                <button id="buttonToronto">Toronto</button>
+                <button id="buttonLondon">London</button>
+                <button id="buttonTokyo">Tokyo</button>
+
+            </section>
+
+            <div id="breakpointFlex">
+
+                <div id="mainSecWidth">
+
+                    <!-- MAIN SECTION -->
+                    <section id="mainSec">
+
+                        <div>
+
+                            <p class="cityName" id="locationName"></p>
+                            <p class="countryName" id="country"></p>
+                            <p class="cityTemp" id="temperature"></p>
+                            <p class="cityDay" id="day"></p>
+                            <p class="cityTime" id="time"></p>
+
+                        </div>    
+                        
+                        <div id="mainSec2">
+
+                            <div class="cityIcon" id="icon"></div>
+                            <p class="cityDesc" id="description"></p>
+
+                        </div>
+
+                    </section>
+
+                    <!-- CURRENT TIMELINE -->
+                    <section id="currentTimeline">
+
+                        <h2>Today's Timeline</h2>
+
+                        <div id="cTimelineFlex">
+
+                            <div class="first3">
+
+                                <article class="timelineSec noBorder">
+
+                                    <p class="currentTime">6:00 AM</p>
+                                    <p id="icon6"></p>
+                                    <p class="currentTemp" id="temperature6"></p>
+
+                                </article>
+
+                                <article class="timelineSec">
+
+                                    <p class="currentTime">9:00 AM</p>
+                                    <p id="icon9"></p>
+                                    <p class="currentTemp" id="temperature9"></p>
+
+                                </article>
+
+                                <article class="timelineSec">
+
+                                    <p class="currentTime">12:00 PM</p>
+                                    <p id="icon12"></p>
+                                    <p class="currentTemp" id="temperature12"></p>
+
+                                </article>
+
+                            </div>
+
+                            <div class="last3">
+
+                                <article class="timelineSec">
+
+                                    <p class="currentTime">3:00 PM</p>
+                                    <p id="icon15"></p>
+                                    <p class="currentTemp" id="temperature15"></p>
+
+                                </article>
+
+                                <article class="timelineSec">
+
+                                    <p class="currentTime">6:00 PM</p>
+                                    <p id="icon18"></p>
+                                    <p class="currentTemp" id="temperature18"></p>
+
+                                </article>
+
+                                <article class="timelineSec">
+
+                                    <p class="currentTime">9:00 PM</p>
+                                    <p id="icon21"></p>
+                                    <p class="currentTemp" id="temperature21"></p>
+
+                                </article>
+
+                            </div>
+
+                        </div> 
+
+                    </section>
+
+                    <!-- AIR CONDITIONS -->
+                    <section id="conditions">
+
+                        <h2>Air Conditions</h2>
+
+                        <div id="conditionsWFlex">
+
+                            <div>
+
+                                <article class="conditionsFlex conditionsMargin">
+
+                                    <img class="iconsCondition" src="/assets/images/realFeel-01.png" alt="temperature icon">
+
+                                    <div > 
+
+                                        <p class="conditionsDesc">Real Feel</p>
+                                        <p class="conditionsAPI" id="RF"></p>
+
+                                    </div>   
+
+                                </article>
+
+                                <article class="conditionsFlex">
+
+                                    <img class="iconsCondition" src="/assets/images/rain-01.png" alt="rainy cloud icon">
+
+                                    <div>
+
+                                        <p class="conditionsDesc">Chance of Rain</p>
+                                        <p class="conditionsAPI" id="CoR"></p>
+
+                                    </div>
+
+                                </article>    
+
+                            </div>
+
+                            <div>
+
+                                <article class="conditionsFlex conditionsMargin">
+
+                                    <img class="iconsCondition" src="/assets/images/wind-01.png" alt=" wind blow icon">
+
+                                    <div>
+
+                                        <p class="conditionsDesc">Wind</p>
+                                        <p class="conditionsAPI" id="windSpeed"></p>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="conditionsFlex">
+
+                                    <img class="iconsCondition" src="/assets/images/uv.png" alt="sun icon">
+
+                                    <div>
+
+                                        <p class="conditionsDesc">UV Index</p>
+                                        <p class="conditionsAPI" id="uvIndex"></p>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <!-- 7 DAY FORECAST -->
+                <section id="sevenDayForecast">
+
+                    <h2>7-Day Forecast</h2>
+                    
+                    <article class="forecastParts">
+
+                        <p class="forecastDays">Today</p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon1"></p>
+                            <p class="forecastDescStyle" id="forecastDesc1"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD1"></p>
+                            <p class="frNight" id="forecastTempN1"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay2"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon2"></p>
+                            <p class="forecastDescStyle" id="forecastDesc2"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD2"></p>
+                            <p class="frNight" id="forecastTempN2"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay3"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon3"></p>
+                            <p class="forecastDescStyle" id="forecastDesc3"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD3"></p>
+                            <p class="frNight" id="forecastTempN3"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay4"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon4"></p>
+                            <p class="forecastDescStyle" id="forecastDesc4"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD4"></p>
+                            <p class="frNight" id="forecastTempN4"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay5"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon5"></p>
+                            <p class="forecastDescStyle" id="forecastDesc5"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD5"></p>
+                            <p class="frNight" id="forecastTempN5"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay6"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon6"></p>
+                            <p class="forecastDescStyle" id="forecastDesc6"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD6"></p>
+                            <p class="frNight" id="forecastTempN6"></p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="forecastParts upperLine">
+
+                        <p class="forecastDays" id="forecastDay7"></p>
+
+                        <div class="forecastPartsTwo">
+
+                            <p id="forecastIcon7"></p>
+                            <p class="forecastDescStyle" id="forecastDesc7"></p>
+
+                        </div>
+
+                        <div class="forecastTemp">
+
+                            <p class="frDay" id="forecastTempD7"></p>
+                            <p class="frNight" id="forecastTempN7"></p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+            </div>  
+
+        </main>
+
+        <footer>
+
+            <p>© Ahmet Tugrul Bayaner 2025</p>
+
+        </footer>
+
+        <!-- local js -->
+        <script src="/assets/js/main.js"></script>
+        
+    </body>
+
+</html>
